@@ -8,8 +8,30 @@
   justify-content: space-between;
   padding: rem(8.5) rem(4.25);
   color: var(--color-light);
-  background-color: red;
+  background-color: transparent;
   border: none;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &.is-active {
+    .burger-button__line {
+      &:first-child {
+        rotate: 45deg;
+        transform-origin: 0;
+        translate: 0.25em -0.1em;
+      }
+
+      &:nth-child(2) {
+        rotate: -45deg;
+      }
+
+      &:last-child {
+        width: 0;
+      }
+    }
+  }
 
   &__line {
     width: 100%;
@@ -21,6 +43,20 @@
     &:last-child {
       align-self: end;
       width: 55%;
+    }
+  }
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: "";
     }
   }
 }
