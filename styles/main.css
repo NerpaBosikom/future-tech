@@ -287,6 +287,10 @@ svg * {
   }
 }
 
+html.is-lock {
+  overflow: hidden;
+}
+
 body {
   font-size: clamp(0.875rem, 0.8112745098rem + 0.2614379085vw, 1.125rem);
   font-family: var(--font-family-base);
@@ -607,7 +611,7 @@ button[aria-label]::before {
   border-radius: 0.625rem;
   pointer-events: none;
 }
-.header__contact-us-link {
+.header__menu__contact-us-link {
   width: 100%;
   max-width: 18.75rem;
   align-self: center;
